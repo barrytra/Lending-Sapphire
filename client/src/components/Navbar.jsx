@@ -43,8 +43,8 @@ const Navbar = () => {
             <AppBar position="static" style={{ backgroundColor: '#1C1C1C' }}>
                 <Toolbar>
                     {/* Title */}
-                    <Typography variant="h6" style={{ flexGrow: 1, color: '#EAEAEA' }}>
-                        Lend App
+                    <Typography variant="h5" style={{ flexGrow: 1, color: '#EAEAEA', fontWeight: '600' }}>
+                        Lending Sapphire
                     </Typography>
                     <Typography variant="p" style={{ flexGrow: 1, color: '#EAEAEA' }}>
                         {`TKN1: ${tkn1price}`}

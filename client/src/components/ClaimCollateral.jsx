@@ -23,7 +23,7 @@ const ClaimCollateral = (props) => {
             }
             catch (error) {
                 console.log(error)
-                alert("Transaction failed, Pls check your balance")
+                alert("You can't claim collateral")
                 return
             }
         }

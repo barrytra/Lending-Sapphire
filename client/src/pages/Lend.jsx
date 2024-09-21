@@ -44,7 +44,7 @@ export default function Lend() {
             <div className="heading">Lend your tokens</div>
             <div className="formDiv">
                 <form className="components">
-                    <label className="label">enter the Amount to lend:
+                    <label className="label">enter the Amount to lend (TKN 2):
                         <input
                             className="input"
                             type="number"
