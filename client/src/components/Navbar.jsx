@@ -10,17 +10,13 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
     const [showSignInModal, setShowSignInModal] = useState(false)
     const [showSignUpModal, setShowSignUpModal] = useState(false)
-    const {connect, account} = useStateContext()
+    const {connect, account, mintTokens} = useStateContext()
     const navigate = useNavigate()
 
     const displayAddress = (address) => {
         // Shorten the address for better UI display
         return `${address.slice(0, 6)}...${address.slice(-4)}`;
     };
-
-    function ConnectButton() {
-        return <w3m-button />
-    }
 
     return (
         <>
@@ -68,6 +64,13 @@ const Navbar = () => {
                         >
                             {account === "" ? "Connect Wallet" : displayAddress(account)}
                         </Button>
+                        {/* <Button
+                            variant="outlined"
+                            style={{ borderColor: '#00FF7F', color: '#00FF7F', marginLeft: 'auto' }}
+                            onClick={mintTokens}
+                        >
+                            mint
+                        </Button> */}
                         
 
                     </Box>

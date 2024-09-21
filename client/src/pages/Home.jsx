@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Box, Button, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import { useStateContext } from '../context/Index';
+import EndOrder from "../components/EndOrder";
+import ClaimCollateral from "../components/ClaimCollateral"
 
 const Home = () => {
     const [activeTab, setActiveTab] = useState('lending'); // Active tab state
@@ -82,6 +84,7 @@ const Home = () => {
                                             <TableCell sx={{ color: '#EAEAEA' }}>Order ID</TableCell>
                                             <TableCell sx={{ color: '#EAEAEA' }}>Order Name</TableCell>
                                             <TableCell sx={{ color: '#EAEAEA' }}>Amount</TableCell>
+                                            <TableCell></TableCell>
                                         </TableRow>
                                     </TableHead>
                                     <TableBody>
@@ -104,6 +107,10 @@ const Home = () => {
                                                     <TableCell sx={{ color: '#EAEAEA' }}>{order.id}</TableCell>
                                                     <TableCell sx={{ color: '#EAEAEA' }}>{order.name}</TableCell>
                                                     <TableCell sx={{ color: '#EAEAEA' }}>{order.amount}</TableCell>
+                                                    <TableCell sx={{ textAlign: 'center' }}>
+                                                        <EndOrder props={order}/>
+                                                        <ClaimCollateral props={order} />
+                                                    </TableCell>
                                                 </TableRow>
                                             ))
                                                 :

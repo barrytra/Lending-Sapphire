@@ -4,15 +4,13 @@ import { useState } from 'react';
 import { ethers } from "ethers";
 import { Link } from "react-router-dom"
 import "./Lend.css"
-
+import ContractABI from "../ABI/abi.json"
+import { useStateContext } from "../context/Index";
 
 export default function Lend() {
     const [inputs, setInputs] = useState({});
-
+    const { contractAddress, token1Contract, token2Contract } = useStateContext()
     const [isAutomaticWithdraw, setIsAutomaticWithdraw] = useState(false);
-    const onChangeCheckBox = (e) => {
-        setIsAutomaticWithdraw(e.target.checked);
-    };
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -20,28 +18,25 @@ export default function Lend() {
         setInputs(values => ({ ...values, [name]: value }))
     }
 
-    const contractAddress = "0x037d942fC7074Fb3d46CDDCF13BA035d0246b7BD";
-
     const func = async (e) => {
         e.preventDefault()
         // console.log(inputs)
 
         const { ethereum } = window;
-        // if (ethereum) {
-        //     const provider = new ethers.providers.Web3Provider(ethereum);
-        //     const signer = provider.getSigner();
-        //     const contract = new ethers.Contract(contractAddress, ContractABI, signer);
+        if (ethereum) {
+            const provider = new ethers.providers.Web3Provider(ethereum);
+            const signer = provider.getSigner();
+            const contract = new ethers.Contract(contractAddress, ContractABI, signer);
+            try{
+            await contract.deposit(inputs.amount);
+            }
+            catch(error){
+                alert("Transaction failed, Pls check your balance")
+                return
+            }
+        }
 
-        //     if (isAutomaticWithdraw) {
-        //         await contract.deposit(inputs.amount, inputs.withdrawAmount, 0, true);
-        //     }
-        //     else {
-        //         await contract.deposit(inputs.amount, 0, 0, true);
-        //     }
-
-        // }
-
-        // else console.log("HEERE")
+        else console.log("HEERE")
     }
 
     return (

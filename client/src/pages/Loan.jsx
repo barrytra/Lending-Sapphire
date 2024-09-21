@@ -4,11 +4,14 @@ import { useState } from 'react';
 import { ethers } from "ethers";
 import { Link } from "react-router-dom"
 import "./Loan.css"
+import ContractABI from "../ABI/abi.json"
+import { useStateContext } from "../context/Index";
+
 
 
 export default function Loan() {
     const [inputs, setInputs] = useState({});
-
+    const { contractAddress, token1Contract, token2Contract } = useStateContext()
     const [isAutomaticWithdraw, setIsAutomaticWithdraw] = useState(false);
     const onChangeCheckBox = (e) => {
         setIsAutomaticWithdraw(e.target.checked);
@@ -20,28 +23,25 @@ export default function Loan() {
         setInputs(values => ({ ...values, [name]: value }))
     }
 
-    const contractAddress = "0x037d942fC7074Fb3d46CDDCF13BA035d0246b7BD";
-
     const func = async (e) => {
         e.preventDefault()
         // console.log(inputs)
 
         const { ethereum } = window;
-        // if (ethereum) {
-        //     const provider = new ethers.providers.Web3Provider(ethereum);
-        //     const signer = provider.getSigner();
-        //     const contract = new ethers.Contract(contractAddress, ContractABI, signer);
+        if (ethereum) {
+            const provider = new ethers.providers.Web3Provider(ethereum);
+            const signer = provider.getSigner();
+            const contract = new ethers.Contract(contractAddress, ContractABI, signer);
+            try {
+                await contract.getLoan(inputs.collateral, inputs.amount);
+            }
+            catch (error) {
+                alert("Transaction failed, Pls check your balance of collateral")
+                return
+            }
+        }
 
-        //     if (isAutomaticWithdraw) {
-        //         await contract.deposit(inputs.amount, inputs.withdrawAmount, 0, true);
-        //     }
-        //     else {
-        //         await contract.deposit(inputs.amount, 0, 0, true);
-        //     }
-
-        // }
-
-        // else console.log("HEERE")
+        else console.log("HEERE")
     }
 
     return (
@@ -49,16 +49,16 @@ export default function Loan() {
             <div className="heading">Take a Loan</div>
             <div className="formDiv">
                 <form className="components">
-                    <label className="label">Enter your collateral
+                    <label className="label">Enter your collateral (TKN 1)
                         <input
                             className="input"
                             type="number"
-                            name="amount"
-                            value={inputs.amount || ""}
+                            name="collateral"
+                            value={inputs.collateral || ""}
                             onChange={handleChange}
                         />
                     </label>
-                    <label className="label">Enter your loan amount
+                    <label className="label">Enter your loan amount (TKN 2)
                         <input
                             className="input"
                             type="number"
@@ -83,7 +83,7 @@ export default function Loan() {
                         )}
                     </div> */}
 
-                    <input className="submit" type="submit" onClick={func}value="Take Loan" />
+                    <input className="submit" type="submit" onClick={func} value="Take Loan" />
                 </form>
             </div>
         </div>
