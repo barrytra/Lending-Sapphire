@@ -16,7 +16,7 @@ const Footer = () => {
         >
             {/* Footer Content */}
             <Typography variant="body2" style={{ marginBottom: '10px' }}>
-                © 2024 Dark Pool App. All rights reserved.
+                © 2024 Lend App. All rights reserved.
             </Typography>
 
             {/* Links */}

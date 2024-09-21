@@ -28,7 +28,7 @@ const Navbar = () => {
                 <Toolbar>
                     {/* Title */}
                     <Typography variant="h6" style={{ flexGrow: 1, color: '#EAEAEA' }}>
-                        Dark Pool App
+                        Lend App
                     </Typography>
 
                     {/* Page Buttons */}
@@ -64,7 +64,7 @@ const Navbar = () => {
                         <Button
                             variant="outlined"
                             style={{ borderColor: '#00FF7F', color: '#00FF7F', marginLeft: 'auto' }}
-                            onClick={ConnectButton}
+                            onClick={connect}
                         >
                             {account === "" ? "Connect Wallet" : displayAddress(account)}
                         </Button>

@@ -6,7 +6,22 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1c1c1c;
+  background-image: url('./components/rm380-04c.jpg');
+  background-size: cover;
+    background-position: center;
+  height: 100vh;
+  width: 100%;
   color: #CCCCCC;
+}
+
+.background-image-container {
+  /* background-image: url('/path-to-your-image/image.jpg'); */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  /* Full viewport height */
+  width: 100vw;
+  /* Full viewport width */
 }
 
 code {
