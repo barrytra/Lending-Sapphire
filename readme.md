@@ -13,16 +13,17 @@ A private lending platform in the Oasis Sapphire blockchain that leverages on-ch
 This project leverages the Oasis Sapphire blockchain to boost the security and efficiency of a private lending platform. Using EVM-compatible smart contracts and Runtime Off-Chain Logic (ROFL) within Trusted Execution Environments (TEEs), it enables dynamic loan pricing and auto-liquidation without traditional KYC. This approach ensures privacy and broadens access, making lending secure and user-friendly globally.
 
 ### 2. PYTH: 
+We use Pyth to retrieve the prices of the tokens, and eventually, the prices are pushed on chain, from where they are queried by a Oracle.sol
 
 ## DESCRIPTION: 
 
-### HOW SAPPHIRE BENEFITS OUR PLATFORM ? 
+### HOW SAPPHIRE BENEFITS OUR PLATFORM (SAPPHIRE + ROFL) ? 
 
 This platform takes full advantage of the Oasis Sapphire blockchain to offer a secure environment for executing EVM compatible smart contracts with enhanced on-chain data confidentiality. This feature ensures that sensitive transaction details such as sender and receiver information are encrypted, allowing users to engage in lending and borrowing without compromising privacy. This shields them from common blockchain threats like front-running, where exposed transaction details could be misused by opportunistic observers.  
 
 Moreover, we integrate off-chain confidentiality using ROFL, which significantly boosts out platform's integrity and security, when paired with Trusted Execution Environments (TEEs). This setup not only secures sensitive operations like real-time pricing feeds but also ensures the accuracy and integrity of these feeds, crucial for calculating loan values reliably. By automating financial processes such as loan issuance based on collateral and auto-liquidation protocols in a secure manner, out platform delivers tailored and responsive financial services that preserve the inherent privacy first ideals of blockchain technology.
 
-### HOW THE PLATFORM WORKS ?
+### HOW DOES THE PLATFORM WORK ?
 
 1. Dual token setup: Token1 is used as collateral by borrowers and Token2 is loan currency provided by liquidity providers. This is what borrowers receive when they take out a loan. 
 
