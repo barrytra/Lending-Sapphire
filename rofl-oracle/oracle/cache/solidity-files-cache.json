@@ -1,0 +1,151 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/aarav/dev/project/rofl-oracle/oracle/contracts/Oracle.sol": {
+      "lastModificationDate": 1726913810656,
+      "contentHash": "e88773905c4975a5738f2ffc081ec822",
+      "sourceName": "contracts/Oracle.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@oasisprotocol/sapphire-contracts/contracts/Subcall.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.9 <=0.8.24"
+      ],
+      "artifacts": [
+        "Oracle"
+      ]
+    },
+    "/home/aarav/dev/project/rofl-oracle/oracle/node_modules/@oasisprotocol/sapphire-contracts/contracts/Subcall.sol": {
+      "lastModificationDate": 1726915089617,
+      "contentHash": "b766d32c0d17119519768aceb7b916ce",
+      "sourceName": "@oasisprotocol/sapphire-contracts/contracts/Subcall.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ConsensusUtils.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Subcall"
+      ]
+    },
+    "/home/aarav/dev/project/rofl-oracle/oracle/node_modules/@oasisprotocol/sapphire-contracts/contracts/ConsensusUtils.sol": {
+      "lastModificationDate": 1726915089598,
+      "contentHash": "3cc6551c21f23b0bd9a78857322b8117",
+      "sourceName": "@oasisprotocol/sapphire-contracts/contracts/ConsensusUtils.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Sapphire.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ConsensusUtils"
+      ]
+    },
+    "/home/aarav/dev/project/rofl-oracle/oracle/node_modules/@oasisprotocol/sapphire-contracts/contracts/Sapphire.sol": {
+      "lastModificationDate": 1726915089612,
+      "contentHash": "3f116912aea78872210ad94b44b85be5",
+      "sourceName": "@oasisprotocol/sapphire-contracts/contracts/Sapphire.sol",
+      "solcConfig": {
+        "version": "0.8.19",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Sapphire"
+      ]
+    }
+  }
+}
