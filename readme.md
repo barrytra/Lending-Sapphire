@@ -3,6 +3,7 @@
 A private lending platform in the Oasis Sapphire blockchain that leverages on-chain and off-chain confidentiality to provide secure and private financial transactions without KYC. It simulates a dual-token setup for loans and collateral, with automated oracle price feeds facilitated by Runtime Off-Chain Logic (ROFL) in Trusted Execution Environments (TEEs). 
 
 ## SYSTEM DESIGN 
+![system_design](https://github.com/user-attachments/assets/5e4b5b6e-3f47-43c5-8eb4-980cc94ca616)
 
 
 
