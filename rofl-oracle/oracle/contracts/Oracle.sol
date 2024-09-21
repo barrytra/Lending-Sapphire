@@ -19,6 +19,11 @@ contract Oracle {
     uint128[] private observations;
     Observation private lastObservation;
 
+    uint128[] private hardcodedValues = [60100, 60200, 60300, 60300, 60200];
+    uint128[] private hardcodedValues2 = [60100, 60200, 60300, 60300, 60200];
+    uint private currentIndex = 0;
+    uint private currentIndex2 = 0;
+
     constructor(bytes21 _roflAppID, uint8 _threshold) {
         require(_threshold > 0, "Invalid threshold");
 
@@ -31,6 +36,11 @@ contract Oracle {
     function submitObservation(uint128 _value) external {
         // Ensure only the authorized ROFL app can submit.
         Subcall.roflEnsureAuthorizedOrigin(roflAppID);
+        // Use the current hardcoded value.
+        uint128 _value = hardcodedValues[currentIndex];
+
+        // Update the index for the next call.
+        currentIndex = (currentIndex + 1) % hardcodedValues.length;
 
         // NOTE: This is a naive oracle implementation for ROFL example purposes.
         // A real oracle must do additional checks and better aggregation before

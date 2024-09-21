@@ -6,6 +6,7 @@
     "hardhat": "^2.22.8"
   },
   "dependencies": {
-    "bech32": "^2.0.0"
+    "bech32": "^2.0.0",
+    "dotenv": "^16.4.5"
   }
 }
