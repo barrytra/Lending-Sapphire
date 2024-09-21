@@ -7,6 +7,8 @@ const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
     const [account, setAccount] = useState('')
+    const [tkn1price, setTkn1price] = useState()
+    const [tkn2price, setTkn2price] = useState()
     const contractAddress = '0x6c9bC906eD5371CF39D6861B1C103c3ae4102c87'
     const token1Contract = '0xA9623c34517256e29e89FD15F840dA2e78A34dCf'
     const token2Contract = '0xA5Bc167931bFAFd5FBF9c84488531300404Fc353'
@@ -82,7 +84,11 @@ export const StateContextProvider = ({ children }) => {
                 contractAddress,
                 token1Contract,
                 token2Contract,
-                mintTokens
+                mintTokens,
+                tkn1price,
+                tkn2price,
+                setTkn1price,
+                setTkn2price
 
             }}
         >

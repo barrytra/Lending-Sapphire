@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
 import Signin from './wallet/Signin';
 import Signup from './wallet/Signup';
@@ -10,13 +10,33 @@ import { useNavigate } from 'react-router-dom';
 const Navbar = () => {
     const [showSignInModal, setShowSignInModal] = useState(false)
     const [showSignUpModal, setShowSignUpModal] = useState(false)
-    const {connect, account, mintTokens} = useStateContext()
+    const {connect, account, tkn1price, tkn2price, setTkn1price, setTkn2price} = useStateContext()
     const navigate = useNavigate()
 
     const displayAddress = (address) => {
         // Shorten the address for better UI display
         return `${address.slice(0, 6)}...${address.slice(-4)}`;
     };
+
+    const tkn1priceSet = [602, 604, 600, 610, 605];
+    const tkn2priceSet = [301, 304, 301, 295, 300];
+
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        // Set up the interval to change token values every 2 seconds
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => {
+                const nextIndex = (prevIndex + 1) % tkn1priceSet.length;
+                setTkn1price(tkn1priceSet[nextIndex]);
+                setTkn2price(tkn2priceSet[nextIndex]);
+                return nextIndex;
+            });
+        }, 1000);
+
+        // Cleanup the interval when the component unmounts
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <>
@@ -25,6 +45,12 @@ const Navbar = () => {
                     {/* Title */}
                     <Typography variant="h6" style={{ flexGrow: 1, color: '#EAEAEA' }}>
                         Lend App
+                    </Typography>
+                    <Typography variant="p" style={{ flexGrow: 1, color: '#EAEAEA' }}>
+                        {`TKN1: ${tkn1price}`}
+                    </Typography>
+                    <Typography variant="p" style={{ flexGrow: 1, color: '#EAEAEA' }}>
+                        {`TKN2: ${tkn2price}`}
                     </Typography>
 
                     {/* Page Buttons */}
