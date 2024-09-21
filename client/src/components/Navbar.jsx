@@ -32,7 +32,7 @@ const Navbar = () => {
                 setTkn2price(tkn2priceSet[nextIndex]);
                 return nextIndex;
             });
-        }, 1000);
+        }, 2000);
 
         // Cleanup the interval when the component unmounts
         return () => clearInterval(interval);

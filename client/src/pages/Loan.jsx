@@ -11,8 +11,9 @@ import { useStateContext } from "../context/Index";
 
 export default function Loan() {
     const [inputs, setInputs] = useState({});
-    const { contractAddress, token1Contract, token2Contract } = useStateContext()
+    const { contractAddress, token1Contract, token2Contract, tkn1price, tkn2price } = useStateContext()
     const [isAutomaticWithdraw, setIsAutomaticWithdraw] = useState(false);
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true); 
     const onChangeCheckBox = (e) => {
         setIsAutomaticWithdraw(e.target.checked);
     };
@@ -20,8 +21,35 @@ export default function Loan() {
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-        setInputs(values => ({ ...values, [name]: value }))
-    }
+        setInputs(values => ({ ...values, [name]: value }));
+
+        // Check if the loan amount is less than 90% of the collateral
+        if (name === "amount" && inputs.collateral) {
+            const collateral = parseFloat(inputs.collateral);
+            const loanAmount = parseFloat(value);
+            if (loanAmount < 0.9 * collateral * tkn1price / tkn2price) {
+                setIsButtonDisabled(false); // Enable the button
+            } else {
+                setIsButtonDisabled(true); // Disable the button
+            }
+        }
+
+        // Also check when collateral value changes
+        if (name === "collateral" && inputs.amount) {
+            const collateral = parseFloat(value);
+            const loanAmount = parseFloat(inputs.amount);
+            if (loanAmount < 0.9 * collateral * tkn1price / tkn2price) {
+                setIsButtonDisabled(false); // Enable the button
+            } else {
+                setIsButtonDisabled(true); // Disable the button
+            }
+        }
+    };
+
+    const calculatedCondition = inputs.collateral
+        ? `TKN2 value <= ${(0.9 * inputs.collateral * tkn1price / tkn2price).toFixed(2)}`
+        : "TKN2 value <= 0.9*(TKN1 value)*(TKN1 price)/(TKN2 price)";
+
 
     const func = async (e) => {
         e.preventDefault()
@@ -67,23 +95,18 @@ export default function Loan() {
                             onChange={handleChange}
                         />
                     </label>
-                    {/* <div className="div1">
-                        <input type="checkbox" value={isAutomaticWithdraw} onChange={onChangeCheckBox} />
-                        {(!isAutomaticWithdraw) && <label className="label" for="vehicle1">automatic withdrawal</label>}
-                        {isAutomaticWithdraw && (
-                            <label className="label"> Amount for automatic withdrawal(VTEST):
-                                <input
-                                    className="input"
-                                    type="number"
-                                    name="withdrawAmount"
-                                    value={inputs.withdrawAmount || ""}
-                                    onChange={handleChange}
-                                />
-                            </label>
-                        )}
-                    </div> */}
+                    <p>Tkn2 value should be less than 90%of tkn1 value </p>
+                    <div className="condition-text">
+                        {calculatedCondition}
+                    </div>
 
-                    <input className="submit" type="submit" onClick={func} value="Take Loan" />
+                    <input
+                        className={!isButtonDisabled ? "submit" : "disable"}
+                        type="submit"
+                        onClick={func}
+                        value="Take Loan"
+                        disabled={isButtonDisabled}  // Disable the button based on the condition
+                    />
                 </form>
             </div>
         </div>
