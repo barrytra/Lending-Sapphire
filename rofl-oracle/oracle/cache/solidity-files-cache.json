@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/home/aarav/dev/project/rofl-oracle/oracle/contracts/Oracle.sol": {
-      "lastModificationDate": 1726940226157,
-      "contentHash": "2bdc3e739477b94046757cd9f309d453",
+      "lastModificationDate": 1726953491064,
+      "contentHash": "eddf64f21435fa3f4eb925db879aec54",
       "sourceName": "contracts/Oracle.sol",
       "solcConfig": {
         "version": "0.8.19",

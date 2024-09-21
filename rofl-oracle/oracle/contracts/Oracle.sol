@@ -19,7 +19,7 @@ contract Oracle {
     uint128[] private observations;
     Observation private lastObservation;
 
-    uint128[] private hardcodedValues = [60100, 60200, 60300, 60300, 60200];
+    uint128[] private hardcodedValues = [601301, 602301, 603302, 604304, 603302, 602301];
     uint128[] private hardcodedValues2 = [60100, 60200, 60300, 60300, 60200];
     uint private currentIndex = 0;
     uint private currentIndex2 = 0;
