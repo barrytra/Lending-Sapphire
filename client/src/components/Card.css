@@ -1,0 +1,79 @@
+.div {
+    width: auto;
+    height: auto;
+    position: relative;
+    border-radius: 10px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    text-decoration: none;
+    font-weight: bold;
+    text-decoration-line: none;
+    color: #11004d;
+    font-family: "McLaren", cursive;
+}
+
+.wholeDiv {
+    width: auto;
+    height: auto;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 100%;
+    max-height: 450px;
+    border: solid black;
+    margin: 0.5rem;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: white;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    margin: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #0c0c0c;
+    text-decoration: none;
+}
+
+.text {
+    color: #0c0c0c;
+    text-decoration: none;
+    margin: 0.5rem;
+}
+
+.div1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid black;
+}
+
+.type {
+    color: #0c0c0c;
+    text-decoration: none;
+    margin: 0.5rem;
+}
+
+.button {
+    margin-left: 5px;
+    font-weight: bold;
+    text-decoration-line: none;
+    color: #11004d;
+    font-family: "McLaren", cursive;
+    background-color: white;
+    padding: 5px 12px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+
+    :hover {
+        color: white;
+        background-color: #11004d;
+    }
+}
