@@ -61,6 +61,15 @@ Moreover, we integrate off-chain confidentiality using ROFL, which significantly
 
 4. Utilizes decentralised TEE’s using ROFL’s to secure the price feed, stopping anyone to mess with the price feed
 
+### Contract Address on RootStock Testnet:
+Token1.sol - 
+Token2.sol - 
+Lending.sol - 
+
+### Contract Address on Sapphire Testnet:
+Token1.sol - 
+Token2.sol - 
+Lending.sol - 
 
 ### Future Developments
 
