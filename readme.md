@@ -12,7 +12,7 @@ PPT: [LendingSapphire.pdf](https://github.com/user-attachments/files/17087821/Le
 
 
 ## PROTOCOLS USED :-
-
+Utilizes decentralised TEE’s using ROFL’s to secure the price feed, stopping anyone to mess with the price feed
 ### 1. OASIS: 
 This project leverages the Oasis Sapphire blockchain to boost the security and efficiency of a private lending platform. Using EVM-compatible smart contracts and Runtime Off-Chain Logic (ROFL) within Trusted Execution Environments (TEEs), it enables dynamic loan pricing and auto-liquidation without traditional KYC. This approach ensures privacy and broadens access, making lending secure and user-friendly globally.
 
@@ -51,8 +51,7 @@ Moreover, we integrate off-chain confidentiality using ROFL, which significantly
 
 3. Integrates real-time data feeds to dynamically adjust loan terms based on market conditions, protecting both lenders and borrowers from volatility.
 
-4. Utilizes blockchain's inherent properties to offer a transparent and secure environment, reducing the risks of fraud and corruptio
-
+4. Utilizes decentralised TEE’s using ROFL’s to secure the price feed, stopping anyone to mess with the price feed
 
 
 
