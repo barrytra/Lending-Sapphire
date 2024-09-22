@@ -63,19 +63,19 @@ Moreover, we integrate off-chain confidentiality using ROFL, which significantly
 
 ### Contract Address on RootStock Testnet:
 
-Token1.sol - 
+Token1.sol - 0x4fe4C39d0296003Df97cB9bD3f2226a9260633be
 
-Token2.sol - 
+Token2.sol - 0x94FAC27739Ac7825F70025988D7FAe34A51F5DeD
 
-Lending.sol - 
+Lending.sol - 0xd872f8d12EE9e49b8ed16ae24f55afd5B043f53C
 
-### Contract Address on Oasis Sapphire Testnet:
+### Contract Address on Sapphire Testnet:
 
-Token1.sol - 
+Token1.sol - 0xA9623c34517256e29e89FD15F840dA2e78A34dCf
 
-Token2.sol - 
+Token2.sol - 0xA5Bc167931bFAFd5FBF9c84488531300404Fc353
 
-Lending.sol - 
+Lending.sol - 0x52cF0df87BB61fFe03A76A8491c8B945f8d903Ba
 
 ### Future Developments
 
