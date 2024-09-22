@@ -69,7 +69,7 @@ Token2.sol -
 
 Lending.sol - 
 
-### Contract Address on Sapphire Testnet:
+### Contract Address on Oasis Sapphire Testnet:
 
 Token1.sol - 
 
