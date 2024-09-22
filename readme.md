@@ -6,7 +6,7 @@
 [https://www.loom.com/share/9756111ea0a84ea785a8514b8eadfcf7?sid=928c23af-7cbb-4dc4-80f4-f7434e4ea849
 ](https://www.loom.com/share/70a023c0110b4b1e9383c235023741cd?sid=01d5507f-3a59-4237-bd75-87fe3918cce6)
 
-# PROJECT OVERVIEW
+# INSPIRATION
 
 A private lending platform in the Oasis Sapphire blockchain that leverages on-chain and off-chain confidentiality to provide secure and private financial transactions without KYC. It simulates a dual-token setup for loans and collateral, with automated oracle price feeds facilitated by Runtime Off-Chain Logic (ROFL) in Trusted Execution Environments (TEEs). 
 
