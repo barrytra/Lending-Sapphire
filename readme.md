@@ -62,6 +62,12 @@ Moreover, we integrate off-chain confidentiality using ROFL, which significantly
 4. Utilizes decentralised TEE’s using ROFL’s to secure the price feed, stopping anyone to mess with the price feed
 
 
+### Future Developments
+
+1. Integrate more tokens for buying and lending in the protocol.
+
+2. Improve the UI/UX in the frontend.
+
 
 
 
